@@ -31,27 +31,34 @@ public class MyTest {
         /**
          * 当要从容器中获取对象的时候，应该写上实体类的默认构造方法，
          * 因为底层实现用的是反射
+         * *
+         *
+         *
          */
         Class clazz = Class.forName("com.zqwzhao.bean.Person");
-        //Object o = clazz.newInstance();
+        //Object o = clazz.newInstance();过时
         Object obj = clazz.getDeclaredConstructor().newInstance();
 
         Person person2 = context.getBean("person2", Person.class);
-        Person person3 = context.getBean("person3", Person.class);
-        Person person4 = context.getBean("person4", Person.class);
         System.out.println(person2);
+
+        Person person3 = context.getBean("person3", Person.class);
         System.out.println(person3);
-        System.out.println(person4);
 
-        Object person5 = context.getBean("person5",Person.class);
+
+        Person person5 = context.getBean("person5",Person.class);
         System.out.println(person5);
-
-        Person person6 = context.getBean("person6", Person.class);
+        Person person6 = context.getBean("person6",Person.class);
         System.out.println(person6);
 
-        PersonTwo person7 = context.getBean("personTwo1", PersonTwo.class);
+
+        Person person7 = context.getBean("person7", Person.class);
         System.out.println(person7);
 
-        //context.getBean("address2", Address.class);
+        PersonTwo person8 = context.getBean("personTwo1", PersonTwo.class);
+        System.out.println(person8);
+
+        Person son = context.getBean("son", Person.class);
+        System.out.println(son);
     }
 }

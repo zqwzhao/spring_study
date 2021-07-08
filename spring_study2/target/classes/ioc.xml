@@ -3,6 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- scope="prototype" 设置多例 默认是singleton单例 -->
     <bean id="person" class="com.zqwzhao.bean.Person" scope="prototype">
         <property name="id" value="1"></property>
         <property name="name" value="张三"></property>
@@ -10,40 +12,49 @@
         <property name="gender" value="男"></property>
     </bean>
 
-    <bean id="person2" class="com.zqwzhao.bean.Person" >
-      <constructor-arg name="id" value="2"></constructor-arg>
-      <constructor-arg name="name" value="李四"></constructor-arg>
-      <constructor-arg name="age" value="23"></constructor-arg>
-      <constructor-arg name="gender" value="男"></constructor-arg>
+    <bean id="person2" class="com.zqwzhao.bean.Person">
+        <constructor-arg name="id" value="2"></constructor-arg>
+        <constructor-arg name="name" value="孟鹤"></constructor-arg>
+        <constructor-arg name="age" value="22"></constructor-arg>
+        <constructor-arg name="gender" value="男"></constructor-arg>
     </bean>
+
+
 
 <!--  通过构造方法赋值的时候，name可以省略不写，但是注意参数值要和构造器参数列表顺序一致  -->
-    <bean id="person3" class="com.zqwzhao.bean.Person" >
-        <constructor-arg  value="3"></constructor-arg>
-        <constructor-arg  value="小雅"></constructor-arg>
-        <constructor-arg  value="23"></constructor-arg>
-        <constructor-arg  value="女"></constructor-arg>
+    <bean id="person3" class="com.zqwzhao.bean.Person">
+        <constructor-arg value="2"></constructor-arg>
+        <constructor-arg value="孟鹤"></constructor-arg>
+        <constructor-arg value="22"></constructor-arg>
+        <constructor-arg value="男"></constructor-arg>
     </bean>
 
-
-    <!--  非要限定顺序的话，可以通过index来解决  -->
-    <bean id="person4" class="com.zqwzhao.bean.Person" >
-        <constructor-arg  value="4" index="0"></constructor-arg>
-        <constructor-arg  value="23" index="2"></constructor-arg>
-        <constructor-arg  value="小雅" index="1"></constructor-arg>
-        <constructor-arg  value="女" index="3"></constructor-arg>
+    <!--  非要限定顺序的话，可以通过index来解决 从0开始 -->
+    <bean id="person4" class="com.zqwzhao.bean.Person">
+        <constructor-arg value="22" index="2"></constructor-arg>
+        <constructor-arg value="男" index="3"></constructor-arg>
+        <constructor-arg value="2" index="0"></constructor-arg>
+        <constructor-arg value="孟鹤" index="1"></constructor-arg>
     </bean>
 
-    <bean id="person5" class="com.zqwzhao.bean.Person" >
-        <constructor-arg  value="王五" ></constructor-arg>
-        <constructor-arg  value="23" type="java.lang.Integer"></constructor-arg>
+    <!--当有多个构造方法时，默认情况下是覆盖    -->
+    <bean id="person5" class="com.zqwzhao.bean.Person">
+        <constructor-arg  value="2"></constructor-arg>
+        <constructor-arg  value="孟鹤"></constructor-arg>
+        <constructor-arg  value="男"></constructor-arg>
+    </bean>
+
+    <bean id="person6" class="com.zqwzhao.bean.Person">
+        <constructor-arg  value="2"></constructor-arg>
+        <constructor-arg  value="孟鹤"></constructor-arg>
+        <constructor-arg  value="22" type="java.lang.Integer"></constructor-arg>
     </bean>
 
     <!--
+        日常工作过程中，通常都用name vlaue方式，其他方式很少用
         date  value="2020/02/08"
         使用构造器方法赋值的时候，参数的name属性是由什么来决定的？ 由构造方法的参数
         name:参数列表的名称
-
         value：表示实际的具体值
         type：值的类型
         index ：值的下标
@@ -52,87 +63,122 @@
 
 
     <!--使用p命名空间来给属性赋值-->
-    <bean id="person6" class="com.zqwzhao.bean.Person" p:id="6" p:name="牛叠为" p:age="22" p:gender="男"></bean>
+    <bean id="person7" class="com.zqwzhao.bean.Person" p:id="3" p:name="牛叠为" p:age="23" p:gender="男">
 
+    </bean>
+
+     <bean id="address" class="com.zqwzhao.bean.Address">
+         <property name="province" value="安徽省"></property>
+         <property name="city" value="合肥市"></property>
+         <property name="town" value="六安"></property>
+     </bean>
 
     <!--给复杂数据类型赋值-->
     <bean id="personTwo1" class="com.zqwzhao.bean.PersonTwo">
-        <property name="id" value="7"></property>
-        <property name="name" value="张三"></property>
-        <property name="age" value="20"></property>
+        <property name="id" value="1"></property>
+        <property name="name" value="牛叠为"></property>
+        <property name="age" value="23"></property>
         <property name="gender" value="男"></property>
         <!--给数组赋值-->
-        <!--
-        <property name="hobbies" value="book,girl,movie"></property>
-        -->
-
-        <property name="hobbies" >
+        <!--<property name="hobbies" value="book,girl,movie"></property>-->
+        <property name="hobbies">
             <array>
                 <value>book</value>
-                <value>girl</value>
                 <value>movie</value>
+                <value>travel</value>
             </array>
         </property>
+
         <!--给引用类型赋值 可以从ref引入外部bean-->
         <property name="address" ref="address"></property>
         <!--给List类型赋值-->
-<!--        <property name="books" value="1,2,3"></property>-->
-        <property name="books" >
-            <list>
-            <!--使用外部bean，无法从IOC容器中直接获取对象的值-->
-                <bean id="address2" class="com.zqwzhao.bean.Address">
-                    <property name="province" value="南京"></property>
-                    <property name="city" value="江阴"></property>
-                    <property name="town" value="aaa"></property>
-                </bean>
-                <bean class="com.zqwzhao.bean.Address">
-                    <property name="province" value="上海"></property>
-                </bean>
+        <!--<property name="books" value="1,2,3"></property>-->
 
-            <!-- 引入外部bean，可以随意从IOC容器引用获取对象的值-->
+
+        <property name="books">
+            <list>
+                <!--使用内部bean，无法从IOC容器中直接获取对象的值-->
+                <bean class="com.zqwzhao.bean.Address">
+                    <property name="province" value="北京"></property>
+                    <property name="city" value="北京市"></property>
+                    <property name="town" value="清华大学出版社"></property>
+                </bean>
+                <!--使用外部bean，可以从IOC容器中直接获取对象的值-->
                 <ref bean="address"></ref>
             </list>
         </property>
-
+        <!--给Set属性赋值-->
         <property name="sets">
             <set>
-                <value>张三</value>
-                <value>张三</value>
-                <value>李四</value>
-                <value>李四</value>
-                <value>李四</value>
-
-
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
             </set>
         </property>
 
+
+        <!--给Map赋值-->
         <property name="maps">
             <map>
-                <entry key="a" value="aaa">
+                <entry>
+                    <key><value>Spring</value></key>
+                    <value>5.2.3</value>
                 </entry>
-                <entry key="b" value="bbb"></entry>
-                <entry key="c" value="ccc"></entry>
-                <entry key="address" value-ref="address"></entry>
-                <entry key="address2" >
+                <entry key="MyBtais" value="3.1.2"></entry>
+                <entry key="SpringBoot" value="2.1.2"></entry>
+                <entry key="address2">
                     <bean class="com.zqwzhao.bean.Address">
-                        <property name="province" value="南京"></property>
+                        <property name="province" value="江苏"></property>
+                        <property name="city" value="南京"></property>
+                        <property name="town" value="xx"></property>
                     </bean>
                 </entry>
 
-                <entry>
-                    <key><value>heihei</value></key>
-                    <value>haha</value>
+                <entry key="address3">
+                    <ref bean="address"></ref>
                 </entry>
             </map>
 
         </property>
+        
+        <!--给properties赋值-->
+        <property name="properties">
+            <props>
+                <prop key="111">sss</prop>
+                <prop key="222">eee</prop>
+            </props>
+        </property>
+
+        <!--    bean之间的依赖关系
+        当bean对象被创建的时候，是按照xml配置文件的定义的顺序创建的，谁在前，谁就会被新创建
+        如果需要干扰创建的顺序，可以使用depends-on属性
+        一般实际工作，不必在意bean创建的顺序
+        -->
+
+
     </bean>
 
-    <bean id="address" class="com.zqwzhao.bean.Address " >
-        <property name="province" value="安徽省"></property>
-        <property name="city" value="滁州"></property>
-        <property name="town" value="天长"></property>
+    <bean id="parent" class="com.zqwzhao.bean.Person" >
+        <property name="id" value="1"></property>
+        <property name="name" value="张三"></property>
     </bean>
+
+    <bean id="son" class="com.zqwzhao.bean.Person" parent="parent">
+
+        <property name="age" value="20"></property>
+        <property name="gender" value="男"></property>
+    </bean>
+    <!--设置bean对象的生命周期-->
+
+
+
+
+
+
+
+
+
+
 
 
 </beans>
