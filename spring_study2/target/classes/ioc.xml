@@ -4,7 +4,16 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- scope="prototype" 设置多例 默认是singleton单例 -->
+    <!--
+    scope属性可以指定当前bean的作用域
+    scope="prototype" 设置多例
+    默认是 singleton 单例
+
+    Spring 4.x 还有另外两个
+    request 每次发送请求都会有一个新的对象
+    session 每次会话都会有一个新的对象
+    几乎不用 5.x被淘汰
+    -->
     <bean id="person" class="com.zqwzhao.bean.Person" scope="prototype">
         <property name="id" value="1"></property>
         <property name="name" value="张三"></property>
@@ -149,11 +158,7 @@
             </props>
         </property>
 
-        <!--    bean之间的依赖关系
-        当bean对象被创建的时候，是按照xml配置文件的定义的顺序创建的，谁在前，谁就会被新创建
-        如果需要干扰创建的顺序，可以使用depends-on属性
-        一般实际工作，不必在意bean创建的顺序
-        -->
+
 
 
     </bean>
@@ -168,17 +173,37 @@
         <property name="age" value="20"></property>
         <property name="gender" value="男"></property>
     </bean>
-    <!--设置bean对象的生命周期-->
 
 
+    <!--    bean之间的依赖关系
+      当bean对象被创建的时候，是按照xml配置文件的定义的顺序创建的，谁在前，谁就会被新创建
+      如果需要干扰创建的顺序，可以使用depends-on属性
+      一般实际工作，不必在意bean创建的顺序
+    <bean id="person" class="com.zqwzhao.bean.Person" depends-on="person"></bean>
+    <bean id="address" class="com.zqwzhao.bean.Address"></bean>
+   -->
 
+    <!--  利用静态工厂方法创建bean
+          静态工厂：类名.静态方法
+      -->
+    <bean id="person8" class="com.zqwzhao.factory.PersonStaticFactory" factory-method="getInstance" >
+        <constructor-arg value="menhe"></constructor-arg>
+    </bean>
 
+    <!-- 实例工厂：先创建工厂实例，然后调用工厂实例的方法
+        factory-bean 表示具体工厂类的实例
+        factory-method 表示具体工厂类实例的方法
+    -->
+    <bean id="instancefactory" class="com.zqwzhao.factory.PersonInstanceFactory">
+    </bean>
 
+    <bean id="person9" class="com.zqwzhao.bean.Person" factory-bean="instancefactory" factory-method="getInstance" >
+        <constructor-arg value="niudiewei"></constructor-arg>
+    </bean>
 
+    <bean id="myFactoryBean" class="com.zqwzhao.factory.MyFactoryBean"></bean>
 
+    <bean id="address23" class="com.zqwzhao.bean.Address" init-method="init" destroy-method="destory"></bean>
 
-
-
-
-
+    <bean id="myBeanPostProcessor" class="com.zqwzhao.bean.MyBeanPostProcessor"></bean>
 </beans>

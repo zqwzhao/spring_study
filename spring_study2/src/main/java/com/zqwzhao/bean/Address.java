@@ -45,6 +45,15 @@ public class Address {
         this.town = town;
     }
 
+    public void init() {
+        //N行逻辑代码实现初始化功能更
+        System.out.println("Address 对象初始化完成");
+    }
+
+    public void destory() {
+        System.out.println("Address 对象销毁");
+    }
+
     @Override
     public String toString() {
         return "Address{" +
