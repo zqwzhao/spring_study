@@ -1,7 +1,12 @@
+import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.druid.pool.DruidPooledConnection;
 import com.zqwzhao.bean.Address;
 import com.zqwzhao.bean.Person;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  * @Auther: zhaoqw
@@ -27,5 +32,20 @@ public class MyTest2 {
 
         Address address23 = context.getBean("address23", Address.class);
         System.out.println(address23);
+
+        //第三饭的Bean
+        DruidDataSource dataSource = context.getBean("dataSource", DruidDataSource.class);
+        System.out.println(dataSource);
+        try {
+            DruidPooledConnection connection = dataSource.getConnection();
+            System.out.println(connection);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        DruidDataSource dataSource2 = context.getBean("dataSource2", DruidDataSource.class);
+        System.out.println(dataSource2);
+
+
     }
 }

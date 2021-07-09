@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        <!-- 使用注解的方式注册bean        -->
+<!--        <bean id="personController" class="cn.zhaoqw.controller.PersonController"></bean>-->
+        <!--
+        使用注解的时候还需要告诉Spring 因该从那个包开始扫描
+        还需要导入context命名空间
+        -->
+
+
+        <!--
+       当定义好注解的扫描路径之后，可以做更细粒度的控制，可以选择扫描哪个注解，也可以选择不扫描哪个注解
+       include-filter:表示要包含扫描的注解,一般不会定义此规则，但是如果引入的第三方包中包含注解，此时就需要使用此标签来进行标识。
+       exclude-filter:表示要排除扫描的注解，使用较多
+
+       type:表示指定过滤的规则
+           annotation：按照注解进行排除，标注了指定注解的组件不要,expression表示要过滤的注解
+           assignable：指定排除某个具体的类，按照类排除，expression表示不注册的具体类名
+           aspectj：后面讲aop的时候说明要使用的aspectj表达式，不用
+           custom：定义一个typeFilter,自己写代码决定哪些类被过滤掉，不用
+           regex：使用正则表达式过滤，不用
+       -->
+        <context:component-scan base-package="cn.zhaoqw" use-default-filters="false">
+                <context:include-filter type="assignable" expression="cn.zhaoqw.controller.PersonController"/>
+                <context:include-filter type="assignable" expression="cn.zhaoqw.service.PersonService"/>
+        </context:component-scan>
+</beans>
