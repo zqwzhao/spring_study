@@ -12,12 +12,21 @@ import org.springframework.stereotype.Component;
  * @version: 1.0
  */
 
-@Component("personController02")
+@Component
 @Scope("singleton")
 public class PersonController {
+
+    public PersonController() {
+        System.out.println("创建对象");
+    }
+
+    /**
+     * 通过@Autowired完成自动注入功能
+     * 是按照什么方式进行注入的呢？
+     *  默认情况下是用type
+     */
     @Autowired
     private PersonService personService;
-
     public void save() {
         personService.save();
     }

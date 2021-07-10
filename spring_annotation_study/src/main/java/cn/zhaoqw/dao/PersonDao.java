@@ -1,6 +1,6 @@
 package cn.zhaoqw.dao;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * @Auther: zhaoqw
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @Description: cn.zhaoqw.dao
  * @version: 1.0
  */
-@Component
+@Repository
 public class PersonDao {
     public void save() {
         System.out.println("保存成功");

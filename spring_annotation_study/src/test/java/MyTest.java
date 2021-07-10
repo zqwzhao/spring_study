@@ -1,3 +1,4 @@
+import cn.zhaoqw.bean.Car;
 import cn.zhaoqw.controller.PersonController;
 import cn.zhaoqw.service.PersonService;
 import org.junit.Test;
@@ -15,12 +16,12 @@ public class MyTest {
     @Test
     public void test01() {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        //PersonController personController02 = context.getBean("personController02", PersonController.class);
-        //System.out.println(personController02);
-        PersonService personService = context.getBean("personService", PersonService.class);
-        PersonService personService2 = context.getBean("personService", PersonService.class);
-        System.out.println(personService);
-        System.out.println(personService == personService2);
+        Car car = context.getBean("car", Car.class);
+        System.out.println(car);
+
+        PersonController personController = context.getBean("personController",PersonController.class);
+        System.out.println(personController);
+        personController.save();
 
 
     }
