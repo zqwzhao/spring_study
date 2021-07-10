@@ -1,6 +1,7 @@
 package cn.zhaoqw.controller;
 
 import cn.zhaoqw.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +15,10 @@ import org.springframework.stereotype.Component;
 @Component("personController02")
 @Scope("singleton")
 public class PersonController {
+    @Autowired
     private PersonService personService;
 
     public void save() {
+        personService.save();
     }
 }

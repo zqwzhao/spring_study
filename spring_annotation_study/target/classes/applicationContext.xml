@@ -26,7 +26,7 @@
            regex：使用正则表达式过滤，不用
        -->
         <context:component-scan base-package="cn.zhaoqw" use-default-filters="false">
-                <context:include-filter type="assignable" expression="cn.zhaoqw.controller.PersonController"/>
-                <context:include-filter type="assignable" expression="cn.zhaoqw.service.PersonService"/>
+
         </context:component-scan>
+<!--        <bean id="personController" class="cn.zhaoqw.controller.PersonController" autowire="byName"></bean>-->
 </beans>

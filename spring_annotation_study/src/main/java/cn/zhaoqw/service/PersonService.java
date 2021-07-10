@@ -1,8 +1,9 @@
 package cn.zhaoqw.service;
 
 import cn.zhaoqw.dao.PersonDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * @Auther: zhaoqw
@@ -10,8 +11,13 @@ import org.springframework.stereotype.Component;
  * @Description: cn.zhaoqw.service
  * @version: 1.0
  */
-@Component
 @Scope("prototype")
+@Service
 public class PersonService {
+    @Autowired
     private PersonDao personDao;
+    public void save() {
+        personDao.save();
+    }
+
 }

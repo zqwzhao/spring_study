@@ -15,13 +15,13 @@ public class MyTest {
     @Test
     public void test01() {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-
-        PersonController personController = context.getBean("personController02", PersonController.class);
-        System.out.println(personController);
-
+        //PersonController personController02 = context.getBean("personController02", PersonController.class);
+        //System.out.println(personController02);
         PersonService personService = context.getBean("personService", PersonService.class);
         PersonService personService2 = context.getBean("personService", PersonService.class);
         System.out.println(personService);
         System.out.println(personService == personService2);
+
+
     }
 }
