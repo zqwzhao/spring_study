@@ -6,12 +6,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
- * @Auther: zhaoqw
- * @Date: 2021/7/9 - 07 - 09 - 21:07
- * @Description: cn.zhaoqw.controller
- * @version: 1.0
+ *
  */
-
 @Component
 @Scope("singleton")
 public class PersonController {
