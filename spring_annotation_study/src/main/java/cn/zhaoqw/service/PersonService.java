@@ -9,12 +9,21 @@ import org.springframework.stereotype.Component;
 /**
  */
 @Component
-@Scope("prototype")
 public class PersonService {
+    public PersonService(){
+        System.out.println("personService");
+    }
+
     @Autowired
     private PersonDao personDao;
     public void save() {
         personDao.save();
+    }
+
+
+
+    public void update() {
+        personDao.update();
     }
 
 }

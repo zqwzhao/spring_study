@@ -1,6 +1,8 @@
 import cn.zhaoqw.bean.Car;
+import cn.zhaoqw.controller.BaseController;
 import cn.zhaoqw.controller.PersonController;
-import cn.zhaoqw.service.PersonService;
+import cn.zhaoqw.service.StudentService;
+import cn.zhaoqw.service.TeacherService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -24,5 +26,14 @@ public class MyTest {
         personController.save();
 
 
+    }
+
+    @Test
+    public void test02() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        StudentService studentService = context.getBean("studentService", StudentService.class);
+        TeacherService teacherService = context.getBean("teacherService", TeacherService.class);
+        studentService.save();
+        teacherService.save();
     }
 }

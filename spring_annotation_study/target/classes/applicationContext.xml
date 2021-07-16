@@ -29,4 +29,6 @@
     <bean id="car" class="cn.zhaoqw.bean.Car"></bean>
     <context:component-scan base-package="cn.zhaoqw"></context:component-scan>
     <!--        <bean id="personController" class="cn.zhaoqw.controller.PersonController" autowire="byName"></bean>-->
+
+
 </beans>
