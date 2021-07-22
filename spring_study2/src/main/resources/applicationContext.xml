@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="dog1" class="com.zqwzhao.bean.Dog">
+        <constructor-arg name="dname" value="汪汪1"></constructor-arg>
+        <constructor-arg name="age" value="3"></constructor-arg>
+    </bean>
+    <bean id="dog2" class="com.zqwzhao.bean.Dog">
+       <property name="dname" value="旺旺2"></property>
+       <property name="age" value="3"></property>
+    </bean>
+</beans>
