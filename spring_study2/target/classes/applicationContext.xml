@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+
+">
+
     <bean id="dog1" class="com.zqwzhao.bean.Dog">
         <constructor-arg name="dname" value="汪汪1"></constructor-arg>
         <constructor-arg name="age" value="3"></constructor-arg>
@@ -10,4 +17,99 @@
        <property name="dname" value="旺旺2"></property>
        <property name="age" value="3"></property>
     </bean>
+
+    <bean id="sweetApple" class="com.zhaoqw.bean.Apple">
+        <property name="title"  value="红富士"></property>
+        <property name="color"  value="红色" ></property>
+        <property name="origin" value="欧洲"></property>
+    </bean>
+
+    <bean id="sourApple" class="com.zhaoqw.bean.Apple">
+        <property name="title"  value="青苹果"></property>
+        <property name="color"  value="绿色" ></property>
+        <property name="origin" value="中亚"></property>
+    </bean>
+    <bean id="softApple" class="com.zhaoqw.bean.Apple">
+        <property name="title"  value="金帅"></property>
+        <property name="color"  value="黄色" ></property>
+        <property name="origin" value="中国"></property>
+    </bean>
+    <bean id="lily" class="com.zhaoqw.bean.Child">
+        <property name="name" value="lily"></property>
+        <property name="apple" ref="sweetApple"></property>
+    </bean>
+
+    <bean id="andy" class="com.zhaoqw.bean.Child">
+        <property name="name" value="andy"></property>
+        <property name="apple" ref="sourApple"></property>
+    </bean>
+
+    <bean id="luna" class="com.zhaoqw.bean.Child">
+        <property name="name" value="luna"></property>
+        <property name="apple" ref="sourApple"></property>
+    </bean>
+
+<!--   利用静态方法获取对象 -->
+    <bean id="appleSF" class="com.zhaoqw.factory.AppleStaticFactory" factory-method="createSweetApple"></bean>
+
+<!--    利用实例工厂创建对象-->
+    <bean id="factoryInstance" class="com.zhaoqw.factory.AppleInstanceFactory"></bean>
+    <bean id="appleIF" factory-bean="factoryInstance" factory-method="getInstance"></bean>
+
+    <bean id="bookDao" class="com.bookshop.dao.BookDaoImpl"></bean>
+    <bean id="bookService" class="com.bookshop.service.BookService">
+        <property name="dao" ref="bookDao"></property>
+    </bean>
+
+
+<!--  集合类型动态注入  -->
+    <bean id="c1" class="com.collectiondemo.entity.Computer">
+        <property name="brand" value="联想"></property>
+        <property name="type" value="台式机"></property>
+        <property name="sn" value="255821441"></property>
+        <property name="price" value="3999.00"></property>
+    </bean>
+
+    <bean id="company" class="com.collectiondemo.entity.Company">
+        <property name="rooms" >
+            <list>
+                <value>2001-总裁办</value>
+                <value>2002-总经理办公室</value>
+                <value>2003-研发部办公室</value>
+            </list>
+        </property>
+
+        <property name="computers">
+            <map>
+                <entry key="dev-88172" value-ref="c1"></entry>
+                <entry key="dev-88173">
+                    <bean id="c2" class="com.collectiondemo.entity.Computer">
+                        <property name="brand" value="戴尔"></property>
+                        <property name="type" value="台式机"></property>
+                        <property name="sn" value="255821442"></property>
+                        <property name="price" value="3699.00"></property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+
+        <property name="info">
+            <props>
+                <prop key="aaa">aaa</prop>
+                <prop key="bbb">bbb</prop>
+                <prop key="ccc">ccc</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="userDao" class="com.bookshop.dao.UserDao" scope="prototype"></bean>
+    <bean id="userService" class="com.bookshop.service.UserService" scope="singleton">
+        <property name="userDao" ref="userDao"></property>
+     </bean>
+
+
+<!--    加载配置文件-->
+    <context:property-placeholder location="classpath:config.properties"></context:property-placeholder>
+
+
 </beans>

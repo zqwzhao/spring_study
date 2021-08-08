@@ -14,5 +14,26 @@
 <!--    包的扫描-->
     <context:component-scan base-package="cn.zhaoqw"></context:component-scan>
 <!--    aop的注解功能-->
-    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+
+
+    <bean id="myPointCut01" class="cn.zhaoqw.util.MyPointCut01"></bean>
+    <aop:config>
+        <aop:pointcut id="pointCut" expression="execution(public * cn.zhaoqw.service.SecondCalculator.add(..))"/>
+        <aop:pointcut id="pointCut2" expression="execution(public * cn.zhaoqw.service.EmployeeService.insert())"/>
+        <aop:aspect id="aspect" ref="myPointCut01">
+            <aop:before method="pointCutMethod" pointcut-ref="pointCut"></aop:before>
+            <aop:after method="doAfter" pointcut-ref="pointCut"></aop:after>
+            <aop:after-returning method="doAfterReturning" pointcut-ref="pointCut" returning="obj"></aop:after-returning>
+            <aop:after-throwing method="doAfterThrowing" pointcut-ref="pointCut" throwing="throwable"></aop:after-throwing>
+        </aop:aspect>
+
+        <aop:aspect id="aspect2" ref="methodCheck">
+            <aop:around method="check" pointcut-ref="pointCut2"></aop:around>
+        </aop:aspect>
+
+    </aop:config>
+
+
+
 </beans>
