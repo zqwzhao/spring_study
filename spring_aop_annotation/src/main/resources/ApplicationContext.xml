@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!--配置ioc    -->
+    <context:component-scan base-package="cn.zhaoqw"></context:component-scan>
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+
+    <!--<bean id="bookShop" class="cn.zhaoqw.exer01.BookShop">
+
+    </bean>
+    <bean id="methodPro" class="cn.zhaoqw.exer01.MethodPro"></bean>-->
+  <!--  <aop:config>
+        <aop:pointcut id="pointCut01"  expression="execution(* cn.zhaoqw.exer01.BookShop.*(..))"/>
+        <aop:aspect ref="methodPro">
+            <aop:around method="welcome" pointcut-ref="pointCut01" ></aop:around>
+        </aop:aspect>
+    </aop:config>-->
+</beans>
