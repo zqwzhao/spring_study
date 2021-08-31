@@ -58,9 +58,9 @@ public class UrlMappingController {
 
     @GetMapping("/view")
     public ModelAndView showView() {
-        ModelAndView modelAndView = new ModelAndView("view.jsp");
-        modelAndView.setViewName("output");
-        modelAndView.addObject("msg","hello.ModelAndView");
+        ModelAndView modelAndView = new ModelAndView("/view.jsp");
+        //modelAndView.setViewName("view");
+        //modelAndView.addObject("msg","hello.ModelAndView");
         return modelAndView;
     }
 }
