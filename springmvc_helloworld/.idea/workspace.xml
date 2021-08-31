@@ -4,26 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="709d3cbc-8594-4a24-8fdb-341aae2ad24f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springmvc_helloworld.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springmvc-first/out/artifacts/springmvc_first_Web_exploded/WEB-INF/classes/com/zhaoqw/springmvc/controller/UrlMappingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../springmvc-first/out/artifacts/springmvc_first_Web_exploded/WEB-INF/classes/com/zhaoqw/springmvc/controller/UrlMappingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springmvc-first/src/main/java/com/zhaoqw/springmvc/controller/UrlMappingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springmvc-first/src/main/java/com/zhaoqw/springmvc/controller/UrlMappingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springmvc-first/src/main/webapp/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../springmvc-first/src/main/webapp/view.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springmvc-first/target/classes/com/zhaoqw/springmvc/controller/UrlMappingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../springmvc-first/target/classes/com/zhaoqw/springmvc/controller/UrlMappingController.class" afterDir="false" />
+    <list default="true" id="709d3cbc-8594-4a24-8fdb-341aae2ad24f" name="Default Changelist" comment="springmvc_helloworld">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/springmvc_helloworld_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/springmvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="E:\JavaEnvironment\.m2\repository" />
+        <option name="userSettingsFile" value="E:\JavaEnvironment\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1xUBnkLS3UYiX13JUiTCd23xmde" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -39,6 +48,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JavaEnvironment/apache-tomcat-9.0.19/lib/servlet-api.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
@@ -64,8 +78,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630399963168</updated>
-      <workItem from="1630399964475" duration="111000" />
+      <workItem from="1630399964475" duration="706000" />
     </task>
+    <task id="LOCAL-00001" summary="springmvc_helloworld">
+      <created>1630400111161</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1630400111161</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,5 +103,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="springmvc_helloworld" />
+    <option name="LAST_COMMIT_MESSAGE" value="springmvc_helloworld" />
   </component>
 </project>
