@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
 
 /**
- * @Auther: zhaoqw
+ * @Auther: zhaoqwdalao
  * @Date: 2021/8/16 - 08 - 16 - 17:40
  * @Description: com.zhaoqw.springmvc.controller
  * @version: 1.0
@@ -53,4 +54,14 @@ public class UrlMappingController {
 
         return "this is a post Method";
     }
+
+
+    @GetMapping("/view")
+    public ModelAndView showView() {
+        ModelAndView modelAndView = new ModelAndView("view.jsp");
+        modelAndView.setViewName("output");
+        modelAndView.addObject("msg","hello.ModelAndView");
+        return modelAndView;
+    }
 }
+
