@@ -10,6 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="709d3cbc-8594-4a24-8fdb-341aae2ad24f" name="Default Changelist" comment="springmvc_helloworld">
+      <change afterPath="$PROJECT_DIR$/../springmvc-second/src/main/resources/ApplicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc-second/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../springmvc-second/web/index.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/javax.ejb.jar" afterDir="false" />
@@ -20,16 +23,17 @@
       <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhaoqw/bean/User.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/zhaoqw/controller/HelloController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/zhaoqw/controller/HelloController2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhaoqw/controller/ViewController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/rebel.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/WEB-INF/page/hello.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/WEB-INF/page/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springmvc-second/springmvc-second.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../springmvc-second/springmvc-second.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/springmvc_helloworld_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/springmvc_helloworld_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springmvc_helloworld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springmvc_helloworld.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhaoqw/bean/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhaoqw/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springmvc-second/src/main/java/com/zhaoqw/controller/ViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springmvc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -245,7 +249,7 @@
       <option name="presentableId" value="Default" />
       <updated>1630399963168</updated>
       <workItem from="1630399964475" duration="3485000" />
-      <workItem from="1630415477723" duration="3064000" />
+      <workItem from="1630415477723" duration="3980000" />
     </task>
     <task id="LOCAL-00001" summary="springmvc_helloworld">
       <created>1630400111161</created>

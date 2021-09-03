@@ -5,16 +5,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/soring-context
+        http://www.springframework.org/schema/soring-context.xsd
 
 ">
     <context:component-scan base-package="com.zhaoqw"></context:component-scan>
     <bean id="/hello" class="com.zhaoqw.controller.HelloController"></bean>
 
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/page/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
-
 
 </beans>
