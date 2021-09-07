@@ -10,13 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70f00214-7697-4425-8d22-c460186fde02" name="Default Changelist" comment="springmvc restful">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/springmvc_restful_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/springmvc_restful_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/springmvc_restful_war_exploded/WEB-INF/classes/ApplicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/springmvc_restful_war_exploded/WEB-INF/classes/ApplicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/springmvc_restful_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/springmvc_restful_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/springmvc-restful/ApplicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/springmvc-restful/ApplicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ApplicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../restful/.idea/artifacts/restful_Web_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../restful/src/main/java/com/imooc/restful/controller/RestFulController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../restful/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../restful/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../restful/src/main/webapp/client.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../restful/src/main/webapp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../restful/src/main/webapp/jquery-3.3.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restful/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../restful/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restful/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../restful/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../restful/restful.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../restful/restful.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,6 +224,7 @@
       <workItem from="1630761340762" duration="1927000" />
       <workItem from="1630768024229" duration="50000" />
       <workItem from="1630768199631" duration="131000" />
+      <workItem from="1630916446581" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="springmvc restful">
       <created>1630637502173</created>
