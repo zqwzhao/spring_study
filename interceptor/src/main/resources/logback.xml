@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="console">
+    <encoder>
+    <pattern>[%thread] %d %level %logger{10} - %msg%n</pattern>
+</encoder>
+</appender>
+    <appender class="ch.qos.logback.core.rolling.RollingFileAppender" name="accessHistoryLog">
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+    <fileNamePattern>E:/MyWorkspace/logs/history.%d.log</fileNamePattern>
+</rollingPolicy>
+        <encoder>
+            <pattern>[%thread] %d %level %logger{10} - %msg%n</pattern>
+        </encoder>
+</appender>
+
+    <root level="debug">
+    <appender-ref ref="console"/>
+    </root>
+    <logger name="com.imooc.restful.interceptor.AccessHistoryInterceptor" level="INFO" additivity="false">
+    <appender-ref ref="accessHistoryLog"/>
+</logger>
+</configuration>

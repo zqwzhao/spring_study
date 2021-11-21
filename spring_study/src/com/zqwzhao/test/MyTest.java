@@ -1,6 +1,7 @@
 package com.zqwzhao.test;
 
 import com.zqwzhao.bean.Person;
+import com.zqwzhao.controller.UserController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
@@ -37,5 +38,10 @@ public class MyTest {
         Person person21 = context1.getBean("person2", Person.class);
         System.out.println(person2);
         System.out.println(person21);
+
+
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("ioc.xml");
+        UserController userController = applicationContext.getBean("userController", UserController.class);
+        userController.hello();
     }
 }

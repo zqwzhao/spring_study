@@ -25,4 +25,19 @@
         <property name="name" value="徐艳"></property>
         <property name="age" value="24"></property>
      </bean>
+
+
+
+
+    <bean id="userDao" class="com.zqwzhao.dao.UserDao">
+    </bean>
+
+    <bean id="userService" class="com.zqwzhao.service.UserService">
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+
+    <bean id="userController" class="com.zqwzhao.controller.UserController">
+        <property name="userService" ref="userService"></property>
+    </bean>
+
 </beans>

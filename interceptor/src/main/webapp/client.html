@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RESTful实验室</title>
+    <script src="resources/js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function (){
+            $("#btnGet").click(function (){
+                $.ajax({
+                    url:"/restful/request/1",
+                    type: "get",
+                    dataType: "json",
+                    success: function (json) {
+                        $("#message").html(json.message);
+                    }
+                })
+            });
+
+
+            $("#btnPost").click(function (){
+                $.ajax({
+                    url:"/restful/request/2",
+                    type: "post",
+                    data: "name=lily&age=23",
+                    dataType:"json",
+                    success: function (json) {
+                        $("#message").html(json.message);
+                    }
+                })
+            });
+
+
+            $("#btnPut").click(function (){
+                $.ajax({
+                    url:"/restful/request/3",
+                    type: "put",
+                    data: "name=lily&age=23",
+                    dataType: "json",
+                    success: function (json) {
+                        $("#message").html(json.message);
+                    }
+                })
+            });
+
+            $("#btnDelete").click(function (){
+                $.ajax({
+                    url:"/restful/request/4",
+                    type: "delete",
+                    dataType: "json",
+                    success: function (json) {
+                        $("#message").html(json.message);
+                    }
+                })
+            });
+
+            $("#btnPersons").click(function (){
+
+                $.ajax({
+                    url:"/restful/persons",
+                    type: "get",
+                    dataType: "json",
+                    success: function (json) {
+                        console.info(json);
+                        for(var i = 0; i < json.length; i++) {
+                            var p = json[i];
+                            $("#divPersons").html("<h2>"+ p.name + "-" + p.age + "-" + p.birthday + "</h2>");
+                        }
+                    }
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+    <input type="button" id="btnGet" value="发送Get请求">
+    <input type="button" id="btnPost" value="发送Post请求">
+    <input type="button" id="btnPut" value="发送Put请求">
+    <input type="button" id="btnDelete" value="发送Delete请求">
+    <h1 id="message">AAAAA</h1>
+    <input type="button" id="btnPersons" value="获取所有人员">
+    <div id="divPersons">BBBB</div>
+</body>
+</html>
